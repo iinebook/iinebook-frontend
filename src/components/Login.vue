@@ -4,7 +4,7 @@
       <h1>iinebook</h1>
     </div>
     <div class="description">
-      <span>iinebook は、</span>
+      <span>iinebook は</span>
       <div class="line">
         <span>
           いいねしたツイートを検索したり、
@@ -19,14 +19,35 @@
       </div>
     </div>
     <div class="buttons">
-
+      <el-button type="primary" class="twitter-auth" @click="loginViaTwitter">
+        <div>
+          <icon name="twitter"/>
+          <span>Twitter で登録/ログイン</span>
+        </div>
+      </el-button>
+      <p>{{ message }}</p>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "login"
+    name: "login",
+    data() {
+      return {message: '未ログイン状態です'}
+    },
+    methods: {
+      loginViaTwitter(event) {
+        let vm = this;
+        OAuth.popup("twitter").done(result => {
+          vm.message = 'ログインに成功しました。';
+          console.log(result);
+        }).fail(error => {
+          vm.message = 'ログインに失敗しました。詳しくはコンソールを確認してね。';
+          console.error(JSON.stringify(error));
+        });
+      }
+    }
   }
 </script>
 
@@ -43,7 +64,7 @@
     justify-content: center;
   }
 
-  h1 {
+  .logo h1 {
     font-size: 36px;
   }
 
@@ -57,10 +78,13 @@
     padding: 40px 0;
   }
 
-  span {
+  .description span {
     font-size: 18px;
     font-weight: 400;
     padding: 25px 0;
+  }
+
+  .line span {
     margin-right: 30px;
   }
 
@@ -68,8 +92,28 @@
     display: flex;
     align-items: center;
   }
+
   .buttons {
     background-color: #404a68;
     min-height: 200px;
+    padding-top: 50px;
+  }
+
+  .buttons p {
+    margin-top: 10px;
+    color: white;
+  }
+
+  .twitter-auth {
+    border-radius: 8px;
+  }
+
+  .twitter-auth div {
+    display: flex;
+    align-items: center;
+  }
+
+  .twitter-auth span {
+    padding-left: 5px;
   }
 </style>

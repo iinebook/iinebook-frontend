@@ -10,10 +10,13 @@ import Icon from 'vue-awesome/components/Icon';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'vue-awesome/icons'
 
+
 Vue.component('icon', Icon);
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI, {locale});
+
+OAuth.initialize('s-1cZbckevfw8IE0TiFTt8rExZM');
 
 /* eslint-disable no-new */
 new Vue({
