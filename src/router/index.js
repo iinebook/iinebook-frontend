@@ -1,15 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '../components/Login';
+import Login from '../components/pages/Login';
+import IineList from '../components/pages/IineList';
 
 Vue.use(Router);
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Login',
-      component: Login
-    }
-  ]
-})
+const routes = [
+  { path: "/", name: "Login", component: Login },
+  { path: "/iines", name: "IineList", component: IineList }
+];
+
+export default new Router({ mode: 'history', routes })
