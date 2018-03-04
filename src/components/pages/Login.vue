@@ -42,6 +42,8 @@
         OAuth.popup("twitter").done(result => {
           vm.message = 'ログインに成功しました。';
           console.log(result);
+
+          this.$router.push('/iines');
         }).fail(error => {
           vm.message = 'ログインに失敗しました。詳しくはコンソールを確認してね。';
           console.error(JSON.stringify(error));
