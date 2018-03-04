@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import AppBar from '../AppBar';
+  import AppBar from '../layout/AppBar';
 
   export default {
     components: {AppBar},

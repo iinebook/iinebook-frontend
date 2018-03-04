@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '../components/pages/Login';
-import IineList from '../components/pages/IineList';
+import IineList from '../components/pages/Iines';
 
 Vue.use(Router);
 
