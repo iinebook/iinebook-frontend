@@ -1,17 +1,18 @@
 <template>
   <div>
     <app-bar/>
-    <main-tab/>
+    <main-nav/>
+    hgoehogemaru
   </div>
 </template>
 
 <script>
   import AppBar from '../layout/AppBar';
-  import MainTab from '../layout/MainTab';
+  import MainNav from '../layout/MainNavigation';
 
   export default {
-    components: {AppBar, MainTab},
-    name: "iine-list"
+    components: {AppBar, MainNav},
+    name: "iinebook-list"
   }
 </script>
 
