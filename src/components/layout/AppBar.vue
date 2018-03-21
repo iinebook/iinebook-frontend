@@ -22,6 +22,7 @@
       handleCommandUserMenu(command) {
         switch(command) {
           case 'logout':
+            OAuth.clearCache();
             this.$router.push("/");
         }
       }

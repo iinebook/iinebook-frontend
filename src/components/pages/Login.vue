@@ -32,9 +32,15 @@
 <script>
   export default {
     name: "login",
+    created: function() {
+      let twitter = OAuth.create('twitter');
+      if (twitter) {
+        this.$router.push('/iines');
+      }
+    },
     methods: {
       loginViaTwitter() {
-        OAuth.popup("twitter").done(result => {
+        OAuth.popup("twitter", {cache: true}).done(result => {
           console.log(result);
           this.$router.push('/iines');
         }).fail(error => {
