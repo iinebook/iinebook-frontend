@@ -6,7 +6,7 @@
     </div>
     <div>
       <el-dropdown trigger="click" @command="handleCommandUserMenu">
-        <el-button class="login-button" type="info" size="mini">登録/ログイン</el-button>
+        <img class="user-icon" src="https://pbs.twimg.com/profile_images/828293307146964992/LHn9agKN_bigger.jpg" />
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="logout">ログアウト</el-dropdown-item>
         </el-dropdown-menu>
@@ -32,7 +32,7 @@
 <style scoped>
   .bar {
     background-color: #404a68;
-    height: 40px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,16 @@
     justify-content: flex-end;
   }
 
-  .login-button {
+  .user-icon {
     margin-right: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+  }
+
+  .user-icon:hover {
+    cursor: pointer;
   }
 </style>

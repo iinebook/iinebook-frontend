@@ -25,7 +25,6 @@
           <span>Twitter で登録/ログイン</span>
         </div>
       </el-button>
-      <p>{{ message }}</p>
     </div>
   </div>
 </template>
@@ -33,19 +32,12 @@
 <script>
   export default {
     name: "login",
-    data() {
-      return {message: '未ログイン状態です'}
-    },
     methods: {
-      loginViaTwitter(event) {
-        let vm = this;
+      loginViaTwitter() {
         OAuth.popup("twitter").done(result => {
-          vm.message = 'ログインに成功しました。';
           console.log(result);
-
           this.$router.push('/iines');
         }).fail(error => {
-          vm.message = 'ログインに失敗しました。詳しくはコンソールを確認してね。';
           console.error(JSON.stringify(error));
         });
       }
